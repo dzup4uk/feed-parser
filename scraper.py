@@ -30,7 +30,7 @@ for i in result.entries:
     print(i['summary'], "\n", file=news_file)
     print("</p></blockquote>", "\n", file=news_file)
 
-js_text = "<script src=”get_version.js”></script>"
+js_text = "<script src='get_version.js'></script>"
 
 print(js_text, "\n", file=news_file)
 print('</body>', "\n", file=news_file)
