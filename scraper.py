@@ -5,37 +5,37 @@ import feedparser as fp
 
 
 
-data = {}
-data['newspapers'] = {}
+DATA = {}
+DATA['newspapers'] = {}
 
 with open('NewsPapers.json') as data_file:
-    companies = json.load(data_file)
-news_file = open('index.html', "w")
+    COMPANIES = json.load(data_file)
+NEWS_FILE = open('index.html', "w")
 
 #for key in companies:
 #    print(key)
 #    print(companies[key])
     #
-result = fp.parse(companies['bbc']['rss'])
-print('<html>', "\n", file=news_file)
-print('<head>', "\n", file=news_file)
-print('<title> Parsed feed from BBC </title>', "\n", file=news_file)
-print('</head>', "\n", file=news_file)
-print('<body onload="loadDoc()">', "\n", file=news_file)
-print("<div>", result.feed['title'], "</div>\n", file=news_file)
-print('<div id="demo"></div>\n', file=news_file)
+RESULT = fp.parse(COMPANIES['bbc']['rss'])
+print('<html>', "\n", file=NEWS_FILE)
+print('<head>', "\n", file=NEWS_FILE)
+print('<title> Parsed feed from BBC </title>', "\n", file=NEWS_FILE)
+print('</head>', "\n", file=NEWS_FILE)
+print('<body onload="loadDoc()">', "\n", file=NEWS_FILE)
+print("<div>", result.feed['title'], "</div>\n", file=NEWS_FILE)
+print('<div id="demo"></div>\n', file=NEWS_FILE)
 
-for i in result.entries:
+for i in RESULT.entries:
     print("<p><em>", i['published'], "</em>&nbsp; &nbsp; <strong>", i['title'], ' </strong> <span style="text-decoration: underline;">', i['link'],  "</span></p>\n", file=news_file)
-    print("<blockquote>", "\n", file=news_file)
-    print(i['summary'], "\n", file=news_file)
-    print("</p></blockquote>", "\n", file=news_file)
+    print("<blockquote>", "\n", file=NEWS_FILE)
+    print(i['summary'], "\n", file=NEWS_FILE)
+    print("</p></blockquote>", "\n", file=NEWS_FILE)
 
-js_text = "<script src='get_version.js'></script>"
+JS_TEXT = "<script src='get_version.js'></script>"
 
-print(js_text, "\n", file=news_file)
-print('</body>', "\n", file=news_file)
-print('</html>', "\n", file=news_file)
+print(JS_TEXT, "\n", file=NEWS_FILE)
+print('</body>', "\n", file=NEWS_FILE)
+print('</html>', "\n", file=NEWS_FILE)
 
-news_file.close()
+NEWS_FILE.close()
 data_file.close()
