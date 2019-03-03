@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+"""This script is parsing RSS feed and generated html page"""
 import json
 import feedparser as fp
 
