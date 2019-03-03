@@ -26,7 +26,8 @@ print("<div>", result.feed['title'], "</div>\n", file=NEWS_FILE)
 print('<div id="demo"></div>\n', file=NEWS_FILE)
 
 for i in RESULT.entries:
-    print("<p><em>", i['published'], "</em>&nbsp; &nbsp; <strong>", i['title'], ' </strong> <span style="text-decoration: underline;">', i['link'], "</span></p>\n", file=news_file)
+    print("<p><em>", i['published'], "</em>&nbsp; &nbsp; <strong>", i['title'], ' </strong> \
+    <span style="text-decoration: underline;">', i['link'], "</span></p>\n", file=news_file)
     print("<blockquote>", "\n", file=NEWS_FILE)
     print(i['summary'], "\n", file=NEWS_FILE)
     print("</p></blockquote>", "\n", file=NEWS_FILE)
